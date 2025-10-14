@@ -1,0 +1,39 @@
+{
+  "@id": "/take-second-page/francesco-ungaro-eavh-mezzia-unsplash.jpg",
+  "@type": "Image",
+  "UID": "57d67cf4f78c4381834aeb31032de482",
+  "allow_discussion": null,
+  "contributors": [],
+  "created": "2025-10-14T11:53:04+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-10-14T11:55:24+00:00",
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "francesco-ungaro-eavh-mezzia-unsplash.jpg",
+  "image": {
+    "blob_path": "57d67cf4f78c4381834aeb31032de482/image/francesco-ungaro-EaVH-mEZziA-unsplash.jpg",
+    "content-type": "image/jpeg",
+    "filename": "francesco-ungaro-EaVH-mEZziA-unsplash.jpg",
+    "height": 4160,
+    "size": 766651,
+    "width": 6240
+  },
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "image_view",
+  "lock": {},
+  "modified": "2025-10-14T11:55:24+00:00",
+  "review_state": null,
+  "rights": "",
+  "subjects": [],
+  "title": "francesco-ungaro-EaVH-mEZziA-unsplash.jpg",
+  "type_title": "Image",
+  "version": "current",
+  "workflow_history": {},
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,39 @@
+{
+  "@id": "/take-second-page/screenshot-2025-10-14-alle-14-53-34.jpg",
+  "@type": "Image",
+  "UID": "5d9e03e442f44046a3e0f9d07178c033",
+  "allow_discussion": null,
+  "contributors": [],
+  "created": "2025-10-14T11:54:03+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-10-14T11:55:24+00:00",
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "screenshot-2025-10-14-alle-14-53-34.jpg",
+  "image": {
+    "blob_path": "5d9e03e442f44046a3e0f9d07178c033/image/Screenshot 2025-10-14 alle 14.53.34.jpg",
+    "content-type": "image/jpeg",
+    "filename": "Screenshot 2025-10-14 alle 14.53.34.jpg",
+    "height": 1694,
+    "size": 204596,
+    "width": 3242
+  },
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "image_view",
+  "lock": {},
+  "modified": "2025-10-14T11:55:24+00:00",
+  "review_state": null,
+  "rights": "",
+  "subjects": [],
+  "title": "Screenshot 2025-10-14 alle 14.53.34.jpg",
+  "type_title": "Image",
+  "version": "current",
+  "workflow_history": {},
+  "working_copy": null,
+  "working_copy_of": null
+}

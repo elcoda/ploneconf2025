@@ -1,15 +1,120 @@
 {
   "__version__": "1.0.0",
   "_blob_files_": [
+    "69e79de8f3a546cba482802527acdf35/image/vida-huang-mjfo2BpXQbc-unsplash.jpg",
+    "57d67cf4f78c4381834aeb31032de482/image/francesco-ungaro-EaVH-mEZziA-unsplash.jpg",
+    "5d9e03e442f44046a3e0f9d07178c033/image/Screenshot 2025-10-14 alle 14.53.34.jpg",
+    "plone_site_root/logo/Screenshot 2025-10-14 alle 14.44.53.jpg",
     "a58ccead718140c1baa98d43595fc3e6/image/plone-foundation.png"
   ],
   "_data_files_": [
     "plone_site_root/data.json",
     "a720393b3c0240e5bd27c43fcd2cfd1e/data.json",
-    "a58ccead718140c1baa98d43595fc3e6/data.json"
+    "a58ccead718140c1baa98d43595fc3e6/data.json",
+    "2748ee7dc1644511be3e007e4f04cd56/data.json",
+    "57d67cf4f78c4381834aeb31032de482/data.json",
+    "98ea2cfb36ab4fc4811543e9bebb4acc/data.json",
+    "5d9e03e442f44046a3e0f9d07178c033/data.json",
+    "69e79de8f3a546cba482802527acdf35/data.json"
   ],
   "default_page": {},
+  "local_permissions": {
+    "2748ee7dc1644511be3e007e4f04cd56": {},
+    "57d67cf4f78c4381834aeb31032de482": {},
+    "5d9e03e442f44046a3e0f9d07178c033": {},
+    "69e79de8f3a546cba482802527acdf35": {},
+    "98ea2cfb36ab4fc4811543e9bebb4acc": {},
+    "a58ccead718140c1baa98d43595fc3e6": {},
+    "a720393b3c0240e5bd27c43fcd2cfd1e": {},
+    "plone_site_root": {
+      "Add portal member": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner"
+        ]
+      },
+      "Content rules: Manage rules": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator"
+        ]
+      },
+      "Set own password": {
+        "acquire": false,
+        "roles": [
+          "Authenticated",
+          "Manager",
+          "Site Administrator"
+        ]
+      },
+      "Set own properties": {
+        "acquire": false,
+        "roles": [
+          "Authenticated",
+          "Manager",
+          "Site Administrator"
+        ]
+      },
+      "Show Toolbar": {
+        "acquire": false,
+        "roles": [
+          "Authenticated"
+        ]
+      },
+      "plone.resource: Export ZIP file": {
+        "acquire": false,
+        "roles": [
+          "Manager"
+        ]
+      },
+      "plone.resourceeditor: Manage Sources": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator"
+        ]
+      }
+    }
+  },
   "local_roles": {
+    "2748ee7dc1644511be3e007e4f04cd56": {
+      "local_roles": {
+        "admin": [
+          "Owner"
+        ]
+      }
+    },
+    "57d67cf4f78c4381834aeb31032de482": {
+      "local_roles": {
+        "admin": [
+          "Owner"
+        ]
+      }
+    },
+    "5d9e03e442f44046a3e0f9d07178c033": {
+      "local_roles": {
+        "admin": [
+          "Owner"
+        ]
+      }
+    },
+    "69e79de8f3a546cba482802527acdf35": {
+      "local_roles": {
+        "admin": [
+          "Owner"
+        ]
+      }
+    },
+    "98ea2cfb36ab4fc4811543e9bebb4acc": {
+      "local_roles": {
+        "admin": [
+          "Owner"
+        ]
+      }
+    },
     "a58ccead718140c1baa98d43595fc3e6": {
       "local_roles": {
         "admin": [
@@ -33,8 +138,13 @@
     }
   },
   "ordering": {
+    "2748ee7dc1644511be3e007e4f04cd56": 43,
+    "57d67cf4f78c4381834aeb31032de482": 0,
+    "5d9e03e442f44046a3e0f9d07178c033": 1,
+    "69e79de8f3a546cba482802527acdf35": 42,
+    "98ea2cfb36ab4fc4811543e9bebb4acc": 2,
     "a58ccead718140c1baa98d43595fc3e6": 0,
-    "a720393b3c0240e5bd27c43fcd2cfd1e": 42
+    "a720393b3c0240e5bd27c43fcd2cfd1e": 41
   },
   "relations": []
 }

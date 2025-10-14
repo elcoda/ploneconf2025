@@ -2,38 +2,45 @@
   "@id": "/Plone",
   "@type": "Plone Site",
   "UID": "plone_site_root",
+  "accent_color": "#f9f9f9",
+  "accent_foreground_color": "#000000",
   "allow_discussion": null,
   "blocks": {
     "47c92ffe-c201-493c-97c9-a2d4e0beab69": {
       "@type": "slate",
-      "plaintext": "Plone is a powerful content management system built on a rock-solid application stack written in the Python and JavaScript programming languages.",
+      "plaintext": "L\u2019Universit\u00e0 degli Studi di Udine \u00e8 nata, unica in Italia, per volont\u00e0 popolare. Avviata nel 1978, in poco pi\u00f9 di quarant\u2019anni ha acquisito un considerevole profilo a livello nazionale , europeo e internazionale.\nLa sua azione si fonda su quattro pilastri: formazione superiore, ricerca e trasferimento tecnologico, interazione con il territorio e in ternazionalizzazione, in un costante scambio di conoscenza e nuove idee con l\u2019ambiente economico locale e la societ\u00e0 in generale. ",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Plone is a powerful content management system built on a rock-solid application stack written in the "
+              "text": "L\u2019Universit\u00e0 degli Studi di Udine \u00e8 nata, unica in Italia, per volont\u00e0 popolare. Avviata nel 1978, in poco pi\u00f9 di quarant\u2019anni ha acquisito un considerevole profilo a livello "
             },
             {
               "children": [
                 {
-                  "text": "Python"
+                  "text": "nazionale"
                 }
               ],
-              "type": "em"
+              "data": {
+                "url": "https://www.uniud.it"
+              },
+              "type": "link"
             },
             {
-              "text": " and "
+              "text": ", europeo e internazionale.\nLa sua azione si fonda su quattro pilastri: formazione superiore, ricerca e trasferimento tecnologico, interazione con il territorio e in"
             },
             {
               "children": [
                 {
-                  "text": "JavaScript"
+                  "text": "ternazionalizzazione, in un costante scambio di conoscenza e nuove idee con l\u2019ambiente economico locale e la societ\u00e0 in generale."
                 }
               ],
-              "type": "em"
+              "type": "del"
             },
             {
-              "text": " programming languages."
+              "text": ""
             }
           ],
           "type": "p"
@@ -43,26 +50,30 @@
     "5f31e9e4-173f-4ec1-ab48-64e9e2789b76": {
       "@type": "title"
     },
-    "68357972-bd25-47e2-a098-c7932a923182": {
+    "8ac932ce-a39a-418e-bb50-dec6feb972be": {
       "@type": "image",
-      "alt": "Plone Foundation Logo",
-      "href": [
-        {
-          "@id": "https://plone.org/foundation",
-          "title": "plone.org/foundation"
-        }
-      ],
+      "align": "center",
+      "alt": "",
       "image_field": "image",
-      "url": "resolveuid/a58ccead718140c1baa98d43595fc3e6"
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "default",
+      "url": "resolveuid/69e79de8f3a546cba482802527acdf35"
     },
     "ae41d44d-c4b1-426c-acf6-2e28cb9a97a0": {
       "@type": "slate",
-      "plaintext": "Find out more about Plone",
+      "plaintext": "Leggi di Uniud sul Tram",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Find out more about Plone"
+              "text": "Leggi di Uniud sul Tram"
             }
           ],
           "type": "h3"
@@ -72,6 +83,8 @@
     "d9707a27-2565-4d7d-9daa-6c61d60ce8fd": {
       "@type": "slate",
       "plaintext": " The features of Plone   Plone Documentation   Plone Training   Plone Community Forum   Add-ons for Plone (backend)   Add-ons for Volto (frontend) ",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -214,12 +227,14 @@
     },
     "e5ace182-3746-472c-ad81-696425a2b161": {
       "@type": "slate",
-      "plaintext": "Welcome to your new Plone site!",
+      "plaintext": "github: @elcoda",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Welcome to your new Plone site!"
+              "text": "github: @elcoda"
             }
           ],
           "type": "h2"
@@ -233,35 +248,77 @@
       "e5ace182-3746-472c-ad81-696425a2b161",
       "ae41d44d-c4b1-426c-acf6-2e28cb9a97a0",
       "47c92ffe-c201-493c-97c9-a2d4e0beab69",
-      "d9707a27-2565-4d7d-9daa-6c61d60ce8fd",
-      "68357972-bd25-47e2-a098-c7932a923182"
+      "8ac932ce-a39a-418e-bb50-dec6feb972be",
+      "d9707a27-2565-4d7d-9daa-6c61d60ce8fd"
     ]
   },
+  "complementary_logo": null,
   "contributors": [],
   "creators": [
     "admin"
   ],
   "description": "",
   "effective": null,
-  "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
+  "footer_address": null,
+  "footer_colophon_text": "Footer colphone",
+  "footer_column_left": [],
+  "footer_column_left_header": null,
+  "footer_column_middle": [],
+  "footer_column_middle_header": null,
+  "footer_column_right": [],
+  "footer_column_right_header": null,
+  "footer_links": [],
+  "footer_logo": null,
+  "footer_logos": [],
+  "footer_logos_container_width": "layout",
+  "footer_logos_size": "s",
+  "has_fat_menu": true,
+  "has_intranet_header": false,
+  "header_actions": [
+    {
+      "@id": "1cae3a31-44fd-4e29-b6c9-8124a164aa14",
+      "href": [
+        {
+          "@id": "https://www.uniud.it",
+          "title": "www.uniud.it"
+        }
+      ],
+      "openLinkInNewTab": true,
+      "title": "Plone - Uniud - Customization"
+    }
+  ],
   "id": "Plone",
+  "intranet_flag": null,
   "is_folderish": true,
-  "items_total": 0,
+  "items_total": 3,
   "language": "##DEFAULT##",
+  "layout": "document_view",
   "lock": {
     "locked": false,
     "stealable": true
   },
-  "parent": {},
+  "logo": {
+    "blob_path": "plone_site_root/logo/Screenshot 2025-10-14 alle 14.44.53.jpg",
+    "content-type": "image/jpeg",
+    "filename": "Screenshot 2025-10-14 alle 14.44.53.jpg",
+    "height": 256,
+    "size": 30420,
+    "width": 572
+  },
+  "post_footer_logo": null,
+  "post_footer_logo_link": null,
+  "primary_foreground_color": "#0000ff",
   "review_state": null,
   "rights": "",
+  "secondary_color": "#ffffff",
+  "secondary_foreground_color": "#000000",
   "subjects": [],
-  "table_of_contents": null,
-  "title": "Project Title",
+  "title": "Ivan",
   "type_title": "Plone Site",
-  "workflow_history": {}
+  "workflow_history": {},
+  "working_copy": null,
+  "working_copy_of": null
 }

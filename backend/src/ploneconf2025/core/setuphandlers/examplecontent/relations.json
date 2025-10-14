@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "from_attribute": "isReferencing",
+    "from_uuid": "2748ee7dc1644511be3e007e4f04cd56",
+    "to_uuid": "57d67cf4f78c4381834aeb31032de482"
+  },
+  {
+    "from_attribute": "isReferencing",
+    "from_uuid": "8881af6ba7c24b8c82533118b4b84f0c",
+    "to_uuid": "69e79de8f3a546cba482802527acdf35"
+  },
+  {
+    "from_attribute": "isReferencing",
+    "from_uuid": "98ea2cfb36ab4fc4811543e9bebb4acc",
+    "to_uuid": "5d9e03e442f44046a3e0f9d07178c033"
+  }
+]

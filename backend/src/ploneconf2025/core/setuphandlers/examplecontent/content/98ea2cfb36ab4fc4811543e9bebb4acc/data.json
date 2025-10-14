@@ -1,0 +1,98 @@
+{
+  "@id": "/take-second-page/lets-try-the-third-page",
+  "@type": "Document",
+  "UID": "98ea2cfb36ab4fc4811543e9bebb4acc",
+  "allow_discussion": null,
+  "blocks": {
+    "34f51451-d291-4624-af4a-2f8154abdcf8": {
+      "@type": "image",
+      "align": "center",
+      "alt": "",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "grey",
+      "url": "../../resolveuid/5d9e03e442f44046a3e0f9d07178c033"
+    },
+    "9b6217f5-4143-4139-8107-3c17cd60695d": {
+      "@type": "slate",
+      "plaintext": "Seems that header / footer logo and footer colophone are store after I save the page. An image:",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Seems that header / footer logo and footer colophone are store after I save the page. An image:"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b5fe6c89-86a0-425a-a29c-f717400082a8": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "b5fe6c89-86a0-425a-a29c-f717400082a8",
+      "9b6217f5-4143-4139-8107-3c17cd60695d",
+      "34f51451-d291-4624-af4a-2f8154abdcf8"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-10-14T11:54:25+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-10-14T11:55:24+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "lets-try-the-third-page",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-10-14T11:55:24+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Let's try the third page",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-10-14T11:54:25+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-10-14T11:55:24+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

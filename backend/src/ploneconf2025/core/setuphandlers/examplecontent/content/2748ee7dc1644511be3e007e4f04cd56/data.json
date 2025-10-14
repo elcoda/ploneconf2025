@@ -1,0 +1,98 @@
+{
+  "@id": "/take-second-page",
+  "@type": "Document",
+  "UID": "2748ee7dc1644511be3e007e4f04cd56",
+  "allow_discussion": null,
+  "blocks": {
+    "701e98d2-0847-4c1f-837a-e2a98da509f2": {
+      "@type": "slate",
+      "plaintext": "I Suppose the Header was the same as in the first page.\nYes, it is, but after saving this page",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "I Suppose the Header was the same as in the first page.\nYes, it is, but after saving this page"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "804a3dfe-c391-45db-b473-3cdf4cb3180c": {
+      "@type": "image",
+      "align": "center",
+      "alt": "",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "default",
+      "url": "../resolveuid/57d67cf4f78c4381834aeb31032de482"
+    },
+    "940cb9b2-7725-434f-a48b-9fb36984ea83": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "940cb9b2-7725-434f-a48b-9fb36984ea83",
+      "701e98d2-0847-4c1f-837a-e2a98da509f2",
+      "804a3dfe-c391-45db-b473-3cdf4cb3180c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-10-14T11:52:35+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-10-14T11:55:24+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "take-second-page",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-10-14T11:55:24+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Take this second page",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-10-14T11:52:35+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-10-14T11:55:24+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
