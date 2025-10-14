@@ -1,0 +1,152 @@
+---
+version: '3.9'
+
+services:
+
+  purger:
+    image: ghcr.io/kitconcept/cluster-purger:latest
+    environment:
+      PURGER_SERVICE_NAME: ploneconf2025-elcoda-tangrama-com-br_varnish
+      PURGER_SERVICE_PORT: 80
+      PURGER_PUBLIC_SITES: "['${STACK_HOSTNAME:-ploneconf2025-elcoda.tangrama.com.br}']"
+    networks:
+      - nw-public
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 5s
+        order: start-first
+
+  varnish:
+    image: ghcr.io/elcoda/ploneconf2025-varnish:${IMAGE_TAG:-latest}
+    command:
+      - '-p'
+      - 'nuke_limit=2000'
+      - '-p'
+      - 'workspace_client=192k'
+      - '-p'
+      - 'workspace_backend=192k'
+    networks:
+      - nw-public
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 5s
+        order: start-first
+      labels:
+        - traefik.enable=true
+        - traefik.constraint-label=public
+        # Services
+        - traefik.http.services.svc-ploneconf2025-elcoda}-varnish.loadbalancer.server.port=80
+        # Routers
+        ## Router: Varnish Public
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-varnish-public.rule=Host(`${STACK_HOSTNAME:-ploneconf2025-elcoda.tangrama.com.br}`)
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-varnish-public.entrypoints=https
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-varnish-public.tls=true
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-varnish-public.tls.certresolver=le
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-varnish-public.service=svc-ploneconf2025-elcoda}-varnish
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-varnish-public.middlewares=gzip
+
+  frontend:
+    image: ghcr.io/elcoda/ploneconf2025-frontend:${IMAGE_TAG:-latest}
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://ploneconf2025-elcoda-tangrama-com-br_backend:8080/Plone
+      RAZZLE_API_PATH: https://${STACK_HOSTNAME:-ploneconf2025-elcoda.tangrama.com.br}
+    networks:
+      - nw-public
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 5s
+        order: start-first
+      labels:
+        - traefik.enable=true
+        - traefik.constraint-label=public
+        # Service
+        - traefik.http.services.svc-ploneconf2025-elcoda}-frontend.loadbalancer.server.port=3000
+        # Routers
+        ## / (Internal)
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-frontend.rule=Host(`${STACK_HOSTNAME:-ploneconf2025-elcoda.tangrama.com.br}`) && Headers(`X-Varnish-Routed`, `1`)
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-frontend.entrypoints=http
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-frontend.service=svc-ploneconf2025-elcoda}-frontend
+
+  backend:
+    image: ghcr.io/elcoda/ploneconf2025-backend:${IMAGE_TAG:-latest}
+    environment:
+      RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-{ cookiecutter.__devops_stack_name}}_db}' password='${DB_PASSWORD:-OHcTLALmzjiA}' port='${DB_PORT:-5432}'"
+    networks:
+      - nw-public
+      - nw-internal
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 5s
+        order: start-first
+      labels:
+        - traefik.enable=true
+        - traefik.constraint-label=public
+        # Services
+        - traefik.http.services.svc-ploneconf2025-elcoda}-backend.loadbalancer.server.port=8080
+        # Middlewares
+        ## VHM rewrite /++api++/
+        - "traefik.http.middlewares.mw-ploneconf2025-elcoda}-backend-vhm-api.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.mw-ploneconf2025-elcoda}-backend-vhm-api.replacepathregex.replacement=/VirtualHostBase/https/${STACK_HOSTNAME:-ploneconf2025-elcoda.tangrama.com.br}/Plone/++api++/VirtualHostRoot$$1"
+        ## VHM rewrite /ClassicUI/
+        - "traefik.http.middlewares.mw-ploneconf2025-elcoda}-backend-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
+        - "traefik.http.middlewares.mw-ploneconf2025-elcoda}-backend-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/${STACK_HOSTNAME:-ploneconf2025-elcoda.tangrama.com.br}/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
+        ## Basic Authentication
+        ### Note: all dollar signs in the hash need to be doubled for escaping.
+        ### To create user:password pair, it's possible to use this command:
+        ### echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
+        ### Defaults to admin:admin
+        - traefik.http.middlewares.mw-ploneconf2025-elcoda}-backend-auth.basicauth.headerField=X-Auth-ClassicUI
+        - traefik.http.middlewares.mw-ploneconf2025-elcoda}-backend-auth.basicauth.users=admin:$$apr1$$uZPT5Fgu$$AmlIdamxT5ipBvPlsdfD70
+
+        # Routes
+        ## /++api++ (Internal)
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-api.rule=Host(`${STACK_HOSTNAME:-ploneconf2025-elcoda.tangrama.com.br}`) && PathPrefix(`/++api++`) && Headers(`X-Varnish-Routed`, `1`)
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-api.entrypoints=http
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-api.service=svc-ploneconf2025-elcoda}-backend
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-api.middlewares=mw-ploneconf2025-elcoda}-backend-vhm-api
+        ## /ClassicUI
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-classic.rule=Host(`${STACK_HOSTNAME:-ploneconf2025-elcoda.tangrama.com.br}`) && PathPrefix(`/ClassicUI`)
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-classic.entrypoints=https
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-classic.tls=true
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-classic.service=svc-ploneconf2025-elcoda}-backend
+        - traefik.http.routers.rt-ploneconf2025-elcoda}-backend-classic.middlewares=gzip,mw-ploneconf2025-elcoda}-backend-auth,mw-backend-vhm-classic
+
+  db:
+    image: postgres:14.15
+    environment:
+      POSTGRES_USER: plone
+      POSTGRES_PASSWORD: OHcTLALmzjiA
+      POSTGRES_DB: plone
+    volumes:
+      - vol-site-data:/var/lib/postgresql/data
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 1s
+        order: stop-first
+    networks:
+      - nw-internal
+
+volumes:
+  vol-traefik-certs: {}
+  vol-site-data:
+    driver_opts:
+      type: none
+      device: "/srv/ploneconf2025/data"
+      o: bind
+
+networks:
+  nw-public:
+    external: true
+  nw-internal:
+    internal: true
+    driver: overlay

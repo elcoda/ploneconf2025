@@ -1,0 +1,59 @@
+---
+stacks:
+
+  traefik:
+    enabled: true
+    stack_file: "etc/stacks/traefik.yml"
+    stack_name: "traefik"
+    main_folder: "/srv/traefik"
+    env_vars:
+      TRAEFIK_VERSION: "v2.11"
+      TRAEFIK_HOSTNAME: "traefik.ploneconf2025-elcoda.tangrama.com.br"
+      TRAEFIK_EMAIL:  "{{ devops.email }}"
+      ### To create user:password pair, it's possible to use this command:
+      ### echo $(htpasswd -nb user password)
+      ### Defaults to admin:admin
+      TRAEFIK_BASIC_AUTH: "user:$apr1$M13lILVS$TqQMZMnUtV.1.qlm99Nam1"
+    folders:
+      - path: "/srv/traefik"
+        owner: "{{ users.default.name }}"
+        group: root
+        mode: "0755"
+
+  cronjob:
+    enabled: true
+    stack_file: "etc/stacks/cronjob.yml"
+    stack_name: "cronjob"
+    main_folder: "/srv/cronjob"
+    env_vars:
+      TZ: "UTC"
+      LOG_LEVEL: "info"
+      LOG_JSON: "false"
+      CRONJOB_VERSION: "1.14"
+    folders:
+      - path: "/srv/cronjob"
+        owner: "{{ users.default.name }}"
+        group: root
+        mode: "0755"
+
+  project:
+    enabled: true
+    stack_file: "../stacks/ploneconf2025-elcoda.tangrama.com.br.yml"
+    stack_name: "ploneconf2025-elcoda-tangrama-com-br"
+    main_folder: "/srv/ploneconf2025-elcoda"
+    env_vars:
+      IMAGE_NAME_PREFIX: "ghcr.io/elcoda/ploneconferencetraining"
+      IMAGE_TAG: "latest"
+      STACK_NAME: "ploneconf2025-elcoda-tangrama-com-br"
+      STACK_HOSTNAME: "ploneconf2025-elcoda.tangrama.com.br"
+      STACK_PREFIX: "ploneconf2025-elcoda"
+      CERTRESOLVER: "le"
+    folders:
+      - path: "/srv/ploneconf2025-elcoda"
+        owner: "{{ users.default.name }}"
+        group: root
+        mode: "0755"
+      - path: "/srv/ploneconf2025-elcoda/data"
+        owner: 500
+        group: root
+        mode: "0750"
