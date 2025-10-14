@@ -54,6 +54,6 @@ stacks:
         group: root
         mode: "0755"
       - path: "/srv/ploneconf2025-elcoda/data"
-        owner: 500
+        owner: 999
         group: root
         mode: "0750"
