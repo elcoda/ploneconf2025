@@ -26,6 +26,7 @@ dependencies = [
     "plone.api",
     "plone.restapi",
     "plone.volto",
+    "kitconcept.voltolighttheme==7.3.1",
 ]
 
 [dependency-groups]
@@ -139,6 +140,7 @@ constraint-dependencies = [
     "jsonschema-specifications==2025.9.1",
     "jsonschema==4.24.0",
     "keyring==25.6.0",
+    "kitconcept.voltolighttheme==7.3.1",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
     "lxml-html-clean==0.4.2",
